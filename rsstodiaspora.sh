@@ -16,7 +16,14 @@
 HANCLTEMP=/tmp/han_cl_tmp
 
 rssArray=($(< rsslist))
-postedArray=($(< posted))
+
+declare -a postedArray
+let i=0
+while IFS=$'\n' read -r line_data; do
+    postedArray[i]="$line_data"
+    ((++i))
+done < posted
+
 
 
 for rsss in "${rssArray[@]}"
