@@ -8,12 +8,20 @@
 #HOW TO USE
 
 #STEP 0։ Install clispora and xmlstarlet before use this script    
-#STEP 1։ Create session as it described in cliaspora manual
-#STEP 2։ Replace rsslist file content with your rss list
-#STEP 3։ Run this script from console
-#STEP 4։ Enjoy :Ճ
+#STEP 1։ Change cd /path/to/script/RSS-To-Diaspora to your value
+#STEP 2։ Change "username@host.am" and "yourpassword" with your real credentials
+#STEP 3։ Replace rsslist file content with your rss list
+#STEP 4։ Run this script from console or add it to cron
+#STEP 5։ Enjoy :Ճ
+
+cliaspora session close
+rm ~/.cliasporarc
+
+cd /path/to/script/RSS-To-Diaspora
 
 HANCLTEMP=/tmp/han_cl_tmp
+
+cliaspora session new username@host.am yourpassword || exit
 
 rssArray=($(< rsslist))
 
@@ -23,7 +31,6 @@ while IFS=$'\n' read -r line_data; do
     postedArray[i]="$line_data"
     ((++i))
 done < posted
-
 
 
 for rsss in "${rssArray[@]}"
@@ -83,3 +90,5 @@ do
 done
 
 rm $HANCLTEMP
+cliaspora session close
+rm ~/.cliasporarc
