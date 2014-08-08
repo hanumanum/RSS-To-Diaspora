@@ -9,8 +9,9 @@ HOW TO USE
 STEP 0։ 
 ======
 Install clispora and xmlstarlet before use this script    
-  clispora 			http://freeshell.de/~mk/projects/cliaspora.html
-  xmlstarlet 		http://xmlstar.sourceforge.net/
+  * clispora 			http://freeshell.de/~mk/projects/cliaspora.html
+  * xmlstarlet 		http://xmlstar.sourceforge.net/
+  
 STEP 1։ 
 ======
 Change cd /path/to/script/RSS-To-Diaspora to your value
